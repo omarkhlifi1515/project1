@@ -31,6 +31,62 @@ Short steps are -
     ```cmd
     streamlit run app.py
 
+## Automatic refresh when files change
+
+You can automate the full pipeline (preprocess + re-index) whenever raw files are updated.
+
+### One-time full refresh
+```cmd
+python auto_refresh.py --once
+```
+
+### Continuous watcher mode
+```cmd
+python auto_refresh.py --interval 10
+```
+
+This watcher:
+- watches your raw source folder
+- regenerates `processed_data/` in clean mode
+- rebuilds the main Chroma index so new timetable versions are immediately used by the RAG system
+
+You can still run preprocessing manually:
+```cmd
+python preprocess_data.py --clean-output
+```
+
+## Enterprise API + React setup
+
+### 1) Local model for low-spec laptops
+```cmd
+ollama pull qwen2.5:3b
+ollama serve
+```
+
+### 2) Run backend API
+```cmd
+uvicorn backend.api.main:app --reload
+```
+
+### 3) Run React frontend
+```cmd
+cd frontend
+npm install
+npm run dev
+```
+
+### 4) Optional Docker stack
+```cmd
+docker compose up --build
+```
+
+## New Professional Features
+- FastAPI backend with auth endpoints and JWT sessions
+- Role-based access control (`student`, `staff`, `admin`)
+- React frontend with login/register, chat, and admin controls
+- Managed refresh jobs from API with locking + status
+- Metrics endpoint (`/metrics`) and CI workflow
+
 ## Some details about code - 
 - initialize the RAGSystem class
     - load the data into a format

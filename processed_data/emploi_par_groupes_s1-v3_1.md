@@ -1,0 +1,341 @@
+---
+category: timetable
+semester: S1
+source_file: Emploi_par_groupes_S1-V3.pdf
+version: V3
+---
+
+# Emploi du Temps — S1 (V3)
+
+Ce document contient les emplois du temps des groupes d'étudiants de l'ENISO (École Nationale d'Ingénieurs de Sousse).
+Chaque section correspond à une page du document original.
+
+
+
+## Page 1
+
+- **08:30-10:00** : Systèmes d'exploitation BACCOUCHE INESB01Algorithmique etProgrammation CWided GHARDALLOUR13Régulation Industrielle Ilyes AISSIR12Introduction à l'IA GAZZEH SamiR03Architecture des Ordinateurs etMicroprocesseurBouraoui MAHMOUDR01-x-
+- **10:15-11:45** : Electrotechnique Adel KHEDHERA02Economie généraleKhawla CHOUAIEB AYARAB02EI-1.1.1 EI-1.1.2Electrotechnique(1/15)RégulationIndustrielle(1/15)Adel KHEDHER Ilyes AISSIR04 A02Anglais IFaiza BEDOUIA02Physique des composants àsemiconducteursBacem CHAABANEB01-x-
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-Electronique numériqueNadia NACEURA21-x--x--x-
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )EI-1.1.1 EI-1.1.2Electroniquenumérique (TP)CAOElectronique etPCB :Préparation à lacertifiation (TP)Laila OUANNES Bouraoui OUNIM14 E13'Algorithmique etProgrammation CWided GHARDALLOUR12-x-EI-1.1.1 EI-1.1.2RégulationIndustrielle (TP)Algorithmique etProgrammationC (TP)Ilyes AISSI Laila OUANNESE13' E22Automatisme IndustrielKhaled BEN SMIDAA03-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )EI-1.1.1 EI-1.1.2Electroniquenumérique (TP)CAOElectronique etPCB :Préparation à lacertifiation (TP)Laila OUANNES Bouraoui OUNIM14 E13'Mathématiques de l'ingénieurAmeni GUEFREJA03-x-EI-1.1.1 EI-1.1.2RégulationIndustrielle (TP)Algorithmique etProgrammationC (TP)Ilyes AISSI Laila OUANNESE13' E22Electronique analogique IBacem CHAABANEA22-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 2
+
+- **08:30-10:00** : EI-1.2.1 EI-1.2.2Electrotechnique(1/15)RégulationIndustrielle(1/15)Adel KHEDHER Ilyes AISSIB03 A02Mathématiques de l'ingénieurAmeni GUEFREJR01EI-1.2.1 EI-1.2.2Electroniquenumérique (TP)CAOElectronique etPCB :Préparation à lacertifiation (TP)Nadia NACEUR Bouraoui OUNIM14 E13'EI-1.2.1 EI-1.2.2RégulationIndustrielle (TP)Algorithmique etProgrammationC (TP)Ilyes AISSI Laila OUANNESE13' E21Electronique analogique IBacem CHAABANEB03-x-
+- **10:15-11:45** : Systèmes d'exploitation BACCOUCHE INESB22Electrotechnique Adel KHEDHERA02EI-1.2.1 EI-1.2.2Electroniquenumérique (TP)CAOElectronique etPCB :Préparation à lacertifiation (TP)Nadia NACEUR Bouraoui OUNIM14 E13'EI-1.2.1 EI-1.2.2RégulationIndustrielle (TP)Algorithmique etProgrammationC (TP)Ilyes AISSI Laila OUANNESE13' E21Automatisme IndustrielKhaled BEN SMIDAR04-x-
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-Algorithmique et Programmation CWided GHARDALLOUR12-x--x--x-
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Régulation Industrielle Ilyes AISSIR03Economie généraleKhawla CHOUAIEB AYARAA22-x-Anglais IFaiza BEDOUIA02Physique des composants àsemiconducteursBacem CHAABANEA21-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Electronique numériqueNadia NACEURB01Algorithmique etProgrammation CWided GHARDALLOUR13-x-Introduction à l'IA GAZZEH SamiR12Architecture des Ordinateurs etMicroprocesseurIhsen BEN HENIAR13-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 3
+
+- **08:30-10:00** : EI-2.1.1 EI-2.1.2Electroniqueanalogiquemodulaire (TP)Systèmetemps réel(TP)Yasmine AYEDSamahMARMOUCHM14' Labo STEI-2.1.1 EI-2.1.2Microcontrôleurs etProgrammation Avancée (TP)Protocoles decommunication embarqués(TP)ContratElectronique-1HajerGHARSALLAOUIE13 Labo STAutomates ProgrammablesIndustrielsNour Eddahr ZAIDIR21Français des affairesLatifa CHEHIDIA04 (Labo Français)EI-2.1.1 EI-2.1.2Electroniquede puissanceavancée (TP)AutomatesProgrammables Industriels(TP)ZainebTOUATISameh ADAYLIE12I02 (LaboAutomatisme)AutosarAdel BOUALLEGUER03
+- **10:15-11:45** : EI-2.1.1 EI-2.1.2Electroniqueanalogiquemodulaire (TP)Systèmetemps réel(TP)Yasmine AYEDSamahMARMOUCHM14' Labo STEI-2.1.1 EI-2.1.2Microcontrôleurs etProgrammation Avancée (TP)Protocoles decommunication embarqués(TP)ContratElectronique-1HajerGHARSALLAOUIE13 Labo STTraitement du signalHanen AKKARIB11Protocoles de communicationembarqués Hajer GHARSALLAOUIB22EI-2.1.1 EI-2.1.2Electroniquede puissanceavancée (TP)AutomatesProgrammables Industriels(TP)ZainebTOUATISameh ADAYLIE12I02 (LaboAutomatisme)TOEICMohamed CHOUCHENEB21
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-EI-2.1.1 EI-2.1.2Anglais III Anglais III Faiza BEDOUIRaouiaMABROUKB12 (LaboAnglais)B13 (LaboAnglais)-x--x-Microcontrôleurs etProgrammation AvancéeAnis BEN SLIMENEB22
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Electronique analogiquemodulaireSabeur JEMMALIR04Architectures avancées desordinateursHajer CHTIOUIB04-x-EI-2.1.1 EI-2.1.2Electroniquede puissanceavancée (1/15)Traitement dusignal (1/15)OmessadHAJJIHanen AKKARIR04 R02Projet Management d'équipeSouad AGREBIR04-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Système temps réelHajer CHTIOUIB03x-Electronique de puissanceavancéeOmessad HAJJIR03Analyse NumériqueAouicha GHOZZIB22-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 4
+
+- **08:30-10:00** : Electronique analogiquemodulaireSabeur JEMMALIR04Français des affairesLatifa CHEHIDIA04 (Labo Français)AutosarAdel BOUALLEGUEB21Protocoles de communicationembarqués Hajer GHARSALLAOUIR02Traitement du signalHanen AKKARIR03Microcontrôleurs etProgrammation AvancéeAnis BEN SLIMENEB22
+- **10:15-11:45** : Architectures avancées desordinateursHajer CHTIOUIR13Electronique de puissanceavancéeOmessad HAJJIB21EI-2.2.1 EI-2.2.2Anglais III Anglais III Faiza BEDOUIRaouiaMABROUKB12 (LaboAnglais)B13 (LaboAnglais)EI-2.2.1 EI-2.2.2Electroniquede puissanceavancée (1/15)Traitement dusignal (1/15)OmessadHAJJIHanen AKKARIA21 B14Automates ProgrammablesIndustrielsNour Eddahr ZAIDIB14Analyse NumériqueAouicha GHOZZIR04
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-Projet Management d'équipeSouad AGREBIB04-x--x
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Système temps réelHajer CHTIOUIR01EI-2.2.1 EI-2.2.2Electroniqueanalogiquemodulaire (TP)Protocoles decommunication embarqués(TP)Yasmine AYEDContratAutomatique-1M14' Labo ST-x-EI-2.2.1 EI-2.2.2Electroniquede puissanceavancée (TP)Système tempsréel (TP)Zaineb TOUATISamahMARMOUCHE12 Labo STEI-2.2.1 EI-2.2.2Microcontrôleurs etProgrammation Avancée (TP)AutomatesProgrammables Industriels(TP)ContratElectronique-1Sameh ADAYLIE13I02 (LaboAutomatisme)-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )TOEICMohamed CHOUCHENEB21EI-2.2.1 EI-2.2.2Electroniqueanalogiquemodulaire (TP)Protocoles decommunication embarqués(TP)Yasmine AYEDContratAutomatique-1M14' Labo ST-x-EI-2.2.1 EI-2.2.2Electroniquede puissanceavancée (TP)Système tempsréel (TP)Zaineb TOUATISamahMARMOUCHE12 Labo STEI-2.2.1 EI-2.2.2Microcontrôleurs etProgrammation Avancée (TP)AutomatesProgrammables Industriels(TP)ContratElectronique-1Sameh ADAYLIE13I02 (LaboAutomatisme)-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 5
+
+- **08:30-10:00** : Architectures avancées desordinateursHajer CHTIOUIB22Système temps réelHajer CHTIOUIR21EI-2.3.1 EI-2.3.2Anglais III Anglais III Faiza BEDOUIRaouiaMABROUKB13 (LaboAnglais)B12 (LaboAnglais)Traitement du signalHanen AKKARIR12Protocoles de communicationembarqués Hajer GHARSALLAOUIB21Analyse NumériqueAouicha GHOZZIR21
+- **10:15-11:45** : Electronique analogiquemodulaireSabeur JEMMALIR04AutosarAdel BOUALLEGUEB01EI-2.3.1 EI-2.3.2Microcontrôleurs etProgrammation Avancée (TP)Système tempsréel (TP)ContratElectronique-1SamahMARMOUCHE13 Labo STAutomates ProgrammablesIndustrielsNour Eddahr ZAIDIR03EI-2.3.1 EI-2.3.2Electroniquede puissanceavancée (1/15)Traitement dusignal (1/15)OmessadHAJJIHanen AKKARIR02 B22EI-2.3.1 EI-2.3.2Electroniqueanalogiquemodulaire (TP)Protocoles decommunication embarqués(TP)EmnaMAHERSIContratAutomatique-1M14' Labo ST
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-EI-2.3.1 EI-2.3.2Microcontrôleurs etProgrammation Avancée (TP)Système tempsréel (TP)ContratElectronique-1SamahMARMOUCHE13 Labo ST-x--x-EI-2.3.1 EI-2.3.2Electroniqueanalogiquemodulaire (TP)Protocoles decommunication embarqués(TP)EmnaMAHERSIContratAutomatique-1M14' Labo ST
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )EI-2.3.1 EI-2.3.2Electroniquede puissanceavancée (TP)AutomatesProgrammables Industriels(TP)Zaineb TOUATI Sameh ADAYLIE12I02 (LaboAutomatisme)TOEICMohamed CHOUCHENEB21-x-Français des affairesLatifa CHEHIDIA04 (Labo Français)x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )EI-2.3.1 EI-2.3.2Electroniquede puissanceavancée (TP)AutomatesProgrammables Industriels(TP)Zaineb TOUATI Sameh ADAYLIE12I02 (LaboAutomatisme)Electronique de puissanceavancéeOmessad HAJJIR01-x-Projet Managementd'équipeSouad AGREBIB22Microcontrôleurs etProgrammation AvancéeAnis BEN SLIMENEB14-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 7
+
+- **08:30-10:00** : Reconnaissance de formepar traitement d'imagesNajoua ESSOUKRI BENAMARAA03EI-3.1.1 EI-3.1.2Compatibilitéélectromagnétique (TP)Module auxchoix 4:AutomotiveDiagnosticServices (UDS)(TP)ContratElectronique-2IntissarMOUSSAM11 E14Véhicule électrique:Modélisation & commandeAdel KHEDHERB04Energies renouvelables et SmartGridAdel KHEDHERR01EI-3.1, EI-3.2, EI-3.3Droit de l’environnement et RSESoumaya MOURALIAmphiCompatibilité électromagnétiqueBacem CHAABANEB14
+- **10:15-11:45** : Fiabilité et SdFHajer KOUKIR21EI-3.1.1 EI-3.1.2Compatibilitéélectromagnétique (TP)Module auxchoix 4:AutomotiveDiagnosticServices (UDS)(TP)ContratElectronique-2IntissarMOUSSAM11 E14Automatisme IndustrielavancéNour Eddahr ZAIDIR12EI-3.1.1 EI-3.1.2Anglais V Anglais VJiheneHOUASSSalmaBANNOURR13 B02EI-3.1.1 EI-3.1.2AutomatismeIndustrielavancé (TP)Reconnaissance de forme partraitementd'images (TP)SamahMARMOUCHContratElectronique-1I02 (LaboAutomatisme)M11
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--xx--x-EI-3.1.1 EI-3.1.2AutomatismeIndustrielavancé (TP)Reconnaissance de forme partraitementd'images (TP)SamahMARMOUCHContratElectronique-1I02 (LaboAutomatisme)M11
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Module aux choix 4:Automotive DiagnosticServices (UDS)Intissar MOUSSAR02Automatisme Industriel avancéSamah MARMOUCHB14-x-EI-3.1.1 EI-3.1.2Préparation àla certification:Labview (TP)Energiesrenouvelableset Smart Grid(TP)Anis BENSLIMENEIntissarMOUSSAE13 E03Module au choix 2:Instrumentation embarquéeAnis BEN SLIMENEB21-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )x-EI-3.1.1 EI-3.1.2Préparation àla certification:Labview (TP)Energiesrenouvelableset Smart Grid(TP)Anis BEN IntissarModule aux choix 1:Management qualité et gestionde projetKhaled BEN SMIDA-x-
+
+## Page 8
+
+- **15:45-17:15** : )SLIMENE MOUSSAE13 E03Khaled BEN SMIDAR21
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 9
+
+- **08:30-10:00** : Fiabilité et SdFHajer KOUKIR03EI-3.2.1 EI-3.2.2Test de circuitintégrénumérique etanalogique (TP)Dimensionnement enmicroélectronique (TP)SamahMARMOUCHSonia ELOUEDE21 E22-x-EI-3.2.2Dimensionnement enmicroélectronique (1/15)Sonia ELOUEDB22EI-3.1, EI-3.2, EI-3.3Droit de l’environnement et RSESoumaya MOURALIAmphiConception haut niveau mixte etmulti technologiqueSonia ELOUEDR01
+- **10:15-11:45** : Module au choix 3-Reconnaissance de formes partraitement d'imagesNajoua ESSOUKRI BEN AMARAA03EI-3.2.1 EI-3.2.2Test de circuitintégrénumérique etanalogique (TP)Dimensionnement enmicroélectronique (TP)SamahMARMOUCHSonia ELOUEDE21 E22-x-Compatibilité éléctromagnétiqueBacem CHAABANEB11Test de circuit intégré numérique etanalogique Fatma Ezzahra SAYADIR12Les SOC et les NOCBouraoui MAHMOUDR03
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x--x--x--x-Systèmes embarquésBouraoui MAHMOUDR12
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )EI-3.2.1 EI-3.2.2Systèmesembarqués(TP)Préparation àla certification(TP)MarouaCHOUCHENEContratElectronique-2E22 E21EI-3.2.1 EI-3.2.2Compatibilitéélectromagnétique (TP)Conceptionhaut niveaumixte et multitechnologique(TP)ContratElectronique-2Sonia ELOUEDM11 E22-x-EI-3.2.1 EI-3.2.2Anglais V Anglais VJihene HOUASS Salma BANNOURA22 B01EI-3.2.1Les SOC et les NOC (TP)Bouraoui MAHMOUDE21-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )EI-3.2.1 EI-3.2.2Systèmesembarqués(TP)Préparation àla certification(TP)MarouaCHOUCHENEContratElectronique-2E22 E21EI-3.2.1 EI-3.2.2Compatibilitéélectromagnétique (TP)Conceptionhaut niveaumixte et multitechnologique(TP)ContratElectronique-2Sonia ELOUEDM11 E22-x-Dimensionnement en microélectroniqueSonia ELOUEDB03EI-3.2.1Les SOC et les NOC (TP)Bouraoui MAHMOUDE21-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 10
+
+- **08:30-10:00** : EI-3.3.1 EI-3.3.2Module auchoix-2: Visionpar ordinateur(TP)SW Testing andverification (TP)Laila OUANNESMarwaGhroudaM11 E11SW Testing and verificationAgnes GHORBELR03-x-EI-3.3.1 EI-3.3.2Test etreconfigurationdes FPGA (TP)Module auchoix-3:Compatabilitéelectromagnétique(TP)SamahMARMOUCHContratElectronique-2E22 M11EI-3.1, EI-3.2, EI-3.3Droit de l’environnement et RSESoumaya MOURALIAmphiArchitecture et sécurité desSystèmes embarquésBouraoui MAHMOUDB11
+- **10:15-11:45** : EI-3.3.1 EI-3.3.2Module auchoix-2: Visionpar ordinateur(TP)SW Testing andverification (TP)Laila OUANNESMarwaGhroudaM11 E11Test et reconfiguration desFPGAFatma Ezzahra SAYADIR02-x-EI-3.3.1 EI-3.3.2Test etreconfigurationdes FPGA (TP)Module auchoix-3:Compatabilitéelectromagnétique(TP)SamahMARMOUCHContratElectronique-2E22 M11Communications des systèmesembarqués Hajer GHARSALLAOUIA22
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x--x--x--x-Module au choix-3: CompatabilitéelectromagnétiqueBacem CHAABANEB01
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Fiabilité et SdFHajer KOUKIB22Automotive diagnosticservices(UDS)Intissar MOUSSAR03-x-UML/IHMWided GHARDALLOUB02EI-3.3.1Architecture et sécurité desSystèmes embarqués (TP)Maroua CHOUCHENEE22-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Module au choix-2: Vision parordinateurNajoua ESSOUKRI BEN AMARAR03Architectures parallèlesHajer CHTIOUIB14-x-EI-3.3.1 EI-3.3.2Anglais V Anglais VJihene HOUASS Salma BANNOURB11 B01EI-3.3.1Architecture et sécurité desSystèmes embarqués (TP)Maroua CHOUCHENEE22-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 11
+
+- **08:30-10:00** : ASE-1.1.1 ASE-1.1.2AnalogElectronics (TP)DigitalElectronics (TP)MarouaCHOUCHENEZaineb TOUATIE13General economyKhawla CHOUAIEB AYARAR02AI for Automotive Wided GHARDALLOUB03ASE-1.1.1 ASE-1.1.2PRJ 1S1:Automotive requestdevelopment (P)PRJ 2S1:AutomotiveAdvancedSimulation (P)Asma BENRHOUMA, HajerKOUKIIntissar MOUSSAE11 E14ASE-1.1.1 ASE-1.1.2AI for Automotive(TP)C programming(TP)ContratElectronique-1Laila OUANNESE21 E22-x-
+- **10:15-11:45** : ASE-1.1.1 ASE-1.1.2AnalogElectronics (TP)DigitalElectronics (TP)MarouaCHOUCHENEZaineb TOUATIE13C programmingWided GHARDALLOUB03Algorithm and data structureWided GHARDALLOUA21ASE-1.1.1 ASE-1.1.2PRJ 1S1:Automotive requestdevelopment (P)PRJ 2S1:AutomotiveAdvancedSimulation (P)Asma BENRHOUMA, HajerKOUKIIntissar MOUSSAE11 E14ASE-1.1.1 ASE-1.1.2AI for Automotive(TP)C programming(TP)ContratElectronique-1Laila OUANNESE21 E22-x-
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-Signal processingHanen AKKARIB11-x--x--x-
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Mathematics of the engineerAouicha GHOZZIR21-x--x-ASE-1.1.1 ASE-1.1.2PRJ 1S1:Automotive requestdevelopment (NP)PRJ 2S1:AutomotiveAdvancedSimulation (NP)E14 E11Digital ElectronicsIhsen BEN HENIAB14-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Analog ElectronicsSonia ELOUEDA22-x--x-ASE-1.1.1 ASE-1.1.2PRJ 1S1:Automotive requestdevelopment (NP)PRJ 2S1:AutomotiveAdvancedSimulation (NP)E14 E11English IRaouia MABROUKA21-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 12
+
+- **08:30-10:00** : Économie GénéraleKhawla CHOUAIEB AYARAR12Mécanique des milieux continusZoubeir TOURKIR04Procédés de fabricationFatma MAKNIR04Mécanique analytiqueHoussem SAAFIA03GMP-1.1.1 GMP-1.1.2Technologiemécanique I (TP)Asservissementet régulation (TP)Narjes CHTIOUI Sana BEMBLIM27 E13-x-
+- **10:15-11:45** : Asservissement et régulationHassen MEKKIB01Algorithmique et programmationavancéeGhassen HAMDIA03Mathématiques de l'ingénieurMaher RADDAOUIA03GMP-1.1.1 GMP-1.1.2Technologiemécanique I (TP)Asservissementet régulation (TP)Narjes CHTIOUI Sana BEMBLIM27 E13-x-
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-GMP-1.1.1 GMP-1.1.2Mécanique desmilieux continus(1/15)Procédés defabrication (1/15)Zoubeir TOURKI Fatma MAKNIR04 R13-x--x--x-
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Matériaux IKhaoula ESSASSIA22GMP-1.1.1 GMP-1.1.2Matériaux I (TP)Procédés defabrication (TP)Manel KHARRAT Fatma MAKNIM01 Hall Mécanique -x-GMP-1.1.1Technologie mécanique I (1/15)Manel KHARRATA21Automatisme IndustrielBadreddine BOUZOUITAR01-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Technologie mécanique IManel KHARRATR04GMP-1.1.1 GMP-1.1.2Matériaux I (TP)Procédés defabrication (TP)Manel KHARRAT Fatma MAKNIM01 Hall Mécanique -x-Etudes des machines et systèmesde productionAbir AMIRAR13Anglais ISalma BANNOURR04-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 13
+
+- **08:30-10:00** : GMP-2.1.1 GMP-2.1.2Machinesélectriques(TP)Eléments dessystèmesmécaniques(TP)Salma JNAYAHMarouaHADDARE01 M11 BisEléments des systèmesmécaniquesMaroua HADDARA21Matériaux IIABDELBASSET YOUSFIB22Analyse NumériqueKamel BERRIRIR04GMP-2.1.1Commande et régulationnumérique des systèmes (TP)Sana BEMBLIE13
+- **10:15-11:45** : GMP-2.1.1 GMP-2.1.2Machinesélectriques(TP)Eléments dessystèmesmécaniques(TP)Salma JNAYAHMarouaHADDARE01 M11 BisGMP-2.1.1 GMP-2.1.2Productiques 1(technologiesd'usinage)(1/15)Eléments dessystèmesmécaniques(1/15)FarhatZEMZEMIMarouaHADDARB14 R04GMP-2.1.1 GMP-2.1.2Dynamique etvibrations dessystèmesmécaniques(1/15)Matériaux II(1/15)Moncef GHISSABDELBASSETYOUSFIR13 B22Français des affairesLatifa CHEHIDIA04 (Labo Français)Productiques 1 (technologiesd'usinage)Farhat ZEMZEMIR01GMP-2.1.1Commande et régulationnumérique des systèmes (TP)Sana BEMBLIE13
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-Commande et régulationnumérique des systèmesHassen MEKKIA03-x--x-Machines électriquesSalma JNAYAHB03
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Dynamique et vibrations dessystèmes mécaniquesMoncef GHISSR13GMP-2.1.1 GMP-2.1.2Dynamique etvibrations dessystèmesmécaniques(TP)Contrôleindustriel parvision (TP)MohamedAmine BENHASSENAContratElectronique-1M12 E13-x-MéthodesFarhat ZEMZEMIR01GMP-2.1.1 GMP-2.1.2Anglais III Anglais III Faiza BEDOUIRaouiaMABROUKB13 (LaboAnglais)B12 (LaboAnglais)-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Contrôle industriel par visionMohamed Ali MAHJOUBR12GMP-2.1.1 GMP-2.1.2Dynamique etvibrations dessystèmesmécaniques(TP)Contrôleindustriel parvision (TP)MohamedAmine BENHASSENAContratElectronique-1M12 E13-x-TOEIC IMohamedCHOUCHENEB21Projet Management d'équipeSouad AGREBIR12-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 15
+
+- **08:30-10:00** : Recherche opérationnelle etgestion de productionHoussein LAMINEB14Fabrication Numerique AvancéeFarhat ZEMZEMIB04-x-Normes et certificationsRaouf FATHALLAHB03GMP-3.1.1 GMP-3.1.2Anglais V Anglais VJihene HOUASS Salma BANNOURR21 A03PlasturgieMouna DERBELA03
+- **10:15-11:45** : Traitements et revêtements dessurfacesRaouf FATHALLAHB21Programmation Orienté ObjetAgnes GHORBELA21-x-Fiabilité et sûreté des systèmesmécatroniquesChokri BOURAOUIA22MEC-3.1, MEC-3.2, GMP-3.1Droit de l’environnement et RSESoumaya MOURALIAmphiMise en forme par déformationplastiqueKhaoula ESSASSIB04
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x--x--x--x-Etudes des machines et syst. deproductionAbir AMIRAR01
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )RobotiqueHoussem SAAFIB03GMP-3.1.1 GMP-3.1.2Plasturgie (TP)FabricationNumeriqueAvancée (TP)AbirABDESSALEMFarhatZEMZEMIM27 HM1-x-GMP-3.1.1 GMP-3.1.2Projet I: Projetd'industrialisation(FabricationAvancée) (TP)Robotique (TP)Narjes CHTIOUI Houssem SAAFIHM(Robotique)Maintenance industrielleMohamed Amine BEN HASSENAR12-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )GMP-3.1.1 GMP-3.1.2Robotique(1/15)Rechercheopérationnelleet gestion deproduction(1/15)HoussemSAAFIHousseinLAMINEA02 R13GMP-3.1.1 GMP-3.1.2Plasturgie (TP)FabricationNumeriqueAvancée (TP)AbirABDESSALEMFarhatZEMZEMIM27 HM1-x-GMP-3.1.1 GMP-3.1.2Projet I: Projetd'industrialisation(FabricationAvancée) (TP)Robotique (TP)Narjes CHTIOUI Houssem SAAFIHM(Robotique)x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 16
+
+- **08:30-10:00** : Electronique AnalogiqueAnis BEL HADJ IBRAHIMA21Modélisation des circuits numériquesNejmeddine JOUIDAB01Économie GénéraleKhawla CHOUAIEB AYARAR13GTE-1.1.1 GTE-1.1.2ElectroniqueAnalogique (TP)Systèmesd'exploitation(TP)Haifa SOUILEMSouheil BENAYEDM14'I01 (LaboTélécom)-x-
+- **10:15-11:45** : Systèmes d'exploitationSouheil BEN AYEDB03Introduction aux RéseauxAhmed BEN FARAHB04Architecture des microprocesseursFatma Ezzahra SAYADIB14GTE-1.1.1 GTE-1.1.2Introduction auxRéseaux (1/15)Modélisation descircuitsnumériques(1/15)Ahmed BENFARAHNejmeddineJOUIDAR04 B02GTE-1.1.1 GTE-1.1.2ElectroniqueAnalogique (TP)Systèmesd'exploitation(TP)Haifa SOUILEMSouheil BENAYEDM14'I01 (LaboTélécom)-x-
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-GTE-1.1.1 GTE-1.1.2Architecture desmicroprocesseurs (1/15)Algorithmique etStructures dedonnées I (1/15)Fatma EzzahraSAYADIGhassen HAMDIA22 R03-x--x--x-
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Théorie de l'information etcodage Imen MEZGHENIA21Techniques de pointes IManel FOURATIB22-x-GTE-1.1.1 GTE-1.1.2ProgrammationProcédurale etLangage C (TP)Modélisation descircuitsnumériques (TP)Abir MHENNI Haifa SOUILEMI01 (LaboTélécom)M14Mathématiques de l'ingénieurAmeni GUEFREJB01-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Programmation Procédurale etLangage CAbir MHENNIB22Algorithmique et Structures dedonnées IGhassen HAMDIA22-x-GTE-1.1.1 GTE-1.1.2ProgrammationProcédurale etLangage C (TP)Modélisation descircuitsnumériques (TP)Abir MHENNI Haifa SOUILEMI01 (LaboTélécom)M14Anglais IFaiza BEDOUIA02-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 17
+
+- **08:30-10:00** : GTE-2.1.1 GTE-2.1.2Développement Mobile (TP)OS Embarquéet Temps Réel(TP)Olfa DALLEL Mariem ARBII13I01 (LaboTélécom)OS Embarqué et Temps RéelManel FOURATIB14Développement MobileAyari RIMB14Communication numériqueMoufida HAJJAJR21Antennes et PropagationTaha BEN SALAHA21
+- **10:15-11:45** : GTE-2.1.1 GTE-2.1.2Développement Mobile (TP)OS Embarquéet Temps Réel(TP)Olfa DALLEL Mariem ARBII13I01 (LaboTélécom)Analyse NumériqueAnis ZEGLAOUIA22Projet Management d’équipeSouad AGREBIB02Processeurs EmbarquésImen MEZGHENIB21GTE-2.1.1 GTE-2.1.2ProcesseursEmbarqués (TP)Antennes etPropagation (TP)Kaouther DALLEL Contrat_TeleI01 (LaboTélécom)
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-Systèmes de bases dedonnées structurées et nonstructuréesSana SAIDR21-x--x-GTE-2.1.1 GTE-2.1.2ProcesseursEmbarqués (TP)Antennes etPropagation (TP)Kaouther DALLEL Contrat_TeleI01 (LaboTélécom)
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Internet des ObjetsIhsen SAADA03Français des affairesLatifa CHEHIDIA04 (Labo Français)-x-TOEICMohamed CHOUCHENEB21Processus stochastiquesMoufida HAJJAJR03-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Techniques de pointes IIIAli DOUIKB04-x-GTE-2.1.1 GTE-2.1.2Anglais III Anglais III Asma BAGGARaouiaMABROUKB12 (LaboAnglais)B13 (LaboAnglais)-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 18
+
+- **08:30-10:00** : GTE-3.1.2Software Defined Radio etNetworks (TP)Contrat_Tele-x-GTE-3.1.1 GTE-3.1.2Frameworks et ServicesTelecoms (TP)Devops (TP)Taha BEN SALAH Olfa DALLELI01 (Labo Télécom) I13Nouvelles technologies des Réseauxde communication Anis BEN ARBIAB04Qualité de services des réseauxContrat_TeleB02
+- **10:15-11:45** : Software Defined Radio etNetworksImen MEZGHENIR12GTE-3.1.2Software Defined Radio etNetworks (TP)Contrat_Tele-x-GTE-3.1.1 GTE-3.1.2Frameworks et ServicesTelecoms (TP)Devops (TP)Taha BEN SALAH Olfa DALLELI01 (Labo Télécom) I13Codage et Compression Audio etVidéoAyari RIMB03DevopsTaha BEN SALAHB03
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x--x--x--x-Planification des réseaux radio-mobilesAbdelaziz HAMDIB02
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )IA-3.1, IA-3.2, GTE-3.1Droit de l’environnement etRSESoumaya MOURALIAmphiGTE-3.1.1 GTE-3.1.2Anglais V Anglais VJihene HOUASSSalmaBANNOURB13 (LaboAnglais)B12 (LaboAnglais)-x-Sécurité des réseaux sans filAhmed BEN FARAHB04Frameworks et Services TelecomsTaha BEN SALAHB02-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Machine LearningWalid CHAINBIR21Techniques de pointes VTakoua ABDELLATIFB11-x--x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 19
+
+- **08:30-10:00** : Automatique Linéaire continuIhsen SAADB02Electronique AnalogiqueAnis BEL HADJ IBRAHIMA22Programmation Procédurale etLangage CAbir MHENNIR03IA-1.1.1 IA-1.1.2Traitement designal (1/15)Modélisationdes circuitsnumériques(1/15)Imen MEZGHENINejmeddineJOUIDAB11 A21Mathématiques de l'ingénieurAmeni GUEFREJR04-x-
+- **10:15-11:45** : Automatisme IndustrielIhsen SAADB04Programmation WEBManel FOURATIB22IA-1.1.1 IA-1.1.2Algorithmique etStructures dedonnées I (1/15)ElectroniqueAnalogique(1/15)Houda Ouanis ElZouariAnis BEL HADJIBRAHIMA22 R02Économie GénéraleKhawla CHOUAIEB AYARAR13Anglais IFaiza BEDOUIA02-x-
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-Modélisation des circuitsnumériquesNejmeddine JOUIDAR02-x--x--x-
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )IA-1.1.1 IA-1.1.2ElectroniqueAnalogique (TP)Systèmesd'exploitation(TP)Haifa SOUILEMSouheil BENAYEDM14' I12IA-1.1.1 IA-1.1.2ProgrammationProcédurale etLangage C (TP)Modélisationdes circuitsnumériques (TP)Mariem ARBI Haifa SOUILEMI21 M14-x-Microprocesseurs et AssembleurNabiha BRAHMA03Algorithmique et Structures dedonnées IHouda Ouanis El ZouariA22-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )IA-1.1.1 IA-1.1.2ElectroniqueAnalogique (TP)Systèmesd'exploitation(TP)Haifa SOUILEMSouheil BENAYEDM14' I12IA-1.1.1 IA-1.1.2ProgrammationProcédurale etLangage C (TP)Modélisationdes circuitsnumériques (TP)Mariem ARBI Haifa SOUILEMI21 M14-x-Traitement de signalImen MEZGHENIB14Systèmes d'exploitationSouheil BEN AYEDB11-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 20
+
+- **08:30-10:00** : Systèmes d'exploitationSouheil BEN AYEDR02IA-1.2.1 IA-1.2.2ProgrammationProcédurale etLangage C (TP)ElectroniqueAnalogique (TP)Mariem ARBI Haifa SOUILEMI21 M14'Algorithmique et Structures dedonnées IHouda Ouanis El ZouariB11Anglais IFaiza BEDOUIA02Automatisme IndustrielIhsen SAADR02-x-
+- **10:15-11:45** : Electronique AnalogiqueAnis BEL HADJ IBRAHIMA21IA-1.2.1 IA-1.2.2ProgrammationProcédurale etLangage C (TP)ElectroniqueAnalogique (TP)Mariem ARBI Haifa SOUILEMI21 M14'Économie GénéraleKhawla CHOUAIEB AYARAR21Microprocesseurs et AssembleurNabiha BRAHMB04Automatique Linéaire continuIhsen SAADA03-x-
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-IA-1.2.1 IA-1.2.2Algorithmique etStructures dedonnées I (1/15)ElectroniqueAnalogique(1/15)Houda Ouanis ElZouariAnis BEL HADJIBRAHIMR01 B14-x--x--x-
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Programmation Procédurale etLangage CAbir MHENNIB04Modélisation des circuitsnumériquesNejmeddine JOUIDAB01-x-IA-1.2.1 IA-1.2.2Traitement designal (1/15)Modélisationdes circuitsnumériques(1/15)Imen MEZGHENINejmeddineJOUIDAB14 R13IA-1.2.1 IA-1.2.2Systèmesd'exploitation(TP)Modélisationdes circuitsnumériques (TP)Olfa DALLEL Haifa SOUILEMI12 M14-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Traitement de signalImen MEZGHENIA21Programmation WEBManel FOURATIR02-x-Mathématiques de l'ingénieurAmeni GUEFREJA03IA-1.2.1 IA-1.2.2Systèmesd'exploitation(TP)Modélisationdes circuitsnumériques (TP)Olfa DALLEL Haifa SOUILEMI12 M14-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 21
+
+- **08:30-10:00** : Bases de DonnéesMohamed Nazih OMRIB21IA-2.1.1 IA-2.1.2AutomatesProgrammablesIndustriels (TP)Réseauxd'entreprise (TP)Contrat_Elec Anis BEN ARBIAI02 (LaboAutomatisme)Projet Management d’équipeSouad AGREBIR13Microcontrôleurs et processeursembarquésNabiha BRAHMB02Transmission de signalJamel BEL HADJ TAHARR13Réseaux d'entrepriseAnis BEN ARBIAA21
+- **10:15-11:45** : Algorithmique AvancéeWalid CHAINBIB11IA-2.1.1 IA-2.1.2AutomatesProgrammablesIndustriels (TP)Réseauxd'entreprise (TP)Contrat_Elec Anis BEN ARBIAI02 (LaboAutomatisme)IA-2.1.1 IA-2.1.2Transmission designal (1/15)Bases deDonnées (1/15)Jamel BEL HADJTAHARMohamed NazihOMRIB04 R03IA-2.1.1 IA-2.1.2Anglais III Anglais III Asma BAGGARaouiaMABROUKB12 (LaboAnglais)B13 (LaboAnglais)Programmation Parallèle etévénementielleOlfa DALLELB04
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-TOEICMohamed CHOUCHENEB21-x--x
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Français des affairesLatifa CHEHIDIA04 (Labo Français)Automates ProgrammablesIndustrielsTarek AROUIR01-x-IA-2.1.1 IA-2.1.2ProgrammationParallèle etévénementielle(TP)Microcontrôleurset processeursembarqués (TP)Olfa DALLELMarouaCHOUCHENEI12Développement des systèmesmobilesAyari RIMB04-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Analyse NumériqueAnis ZEGLAOUIB14IA-2.1.1 IA-2.1.2AlgorithmiqueAvancée (1/15)AutomatesProgrammablesIndustriels (1/15)Walid CHAINBI Tarek AROUIB01 R12-x-IA-2.1.1 IA-2.1.2ProgrammationParallèle etévénementielle(TP)Microcontrôleurset processeursembarqués (TP)Olfa DALLELMarouaCHOUCHENEI12Théorie de l'information etcodageContrat_TeleA03-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 22
+
+- **08:30-10:00** : Français des affairesLatifa CHEHIDIA04 (Labo Français)IA-2.2.1 IA-2.2.2AlgorithmiqueAvancée (1/15)AutomatesProgrammables Industriels(1/15)Walid CHAINBI Tarek AROUIB03 B22IA-2.2.1 IA-2.2.2Transmissionde signal (1/15)Bases deDonnées (1/15)Jamel BELHADJ TAHARMohamedNazih OMRIA22 A03IA-2.2.1 IA-2.2.2AutomatesProgrammables Industriels(TP)Microcontrôleurs etprocesseursembarqués(TP)Contrat_ElecMarouaCHOUCHENEI02 (LaboAutomatisme)Programmation Parallèle etévénementielleOlfa DALLELB22Automates ProgrammablesIndustrielsTarek AROUIB04
+- **10:15-11:45** : Bases de DonnéesMohamed Nazih OMRIR03Algorithmique AvancéeWalid CHAINBIR21IA-2.2.1 IA-2.2.2Réseauxd'entreprise(TP)ProgrammationParallèle etévénementielle(TP)Contrat_Info Olfa DALLELI12IA-2.2.1 IA-2.2.2AutomatesProgrammables Industriels(TP)Microcontrôleurs etprocesseursembarqués(TP)Contrat_ElecMarouaCHOUCHENEI02 (LaboAutomatisme)Réseaux d'entrepriseAnis BEN ARBIAB11
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-IA-2.2.1 IA-2.2.2Réseauxd'entreprise(TP)ProgrammationParallèle etévénementielle(TP)Contrat_Info Olfa DALLELI12-x--x-Projet Managementd’équipeSouad AGREBIR03
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Analyse NumériqueAnis ZEGLAOUIR12Transmission de signalJamel BEL HADJ TAHARA21-x-IA-2.2.1 IA-2.2.2Anglais III Anglais III Asma BAGGARaouiaMABROUKB12 (LaboAnglais)B13 (LaboAnglais)x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Théorie de l'information etcodageContrat_TeleR01TOEICMohamed CHOUCHENEB21-x-Microcontrôleurs et processeursembarquésNabiha BRAHMR04Développement dessystèmes mobilesAyari RIMB01-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 23
+
+- **08:30-10:00** : IA-3.1.1 IA-3.1.2ArchitectureOrientéeServices (1/15)Bases dedonnéesréparties(1/15)Walid CHAINBIManelFOURATIA22 R21IA-3.1.1 IA-3.1.2SystèmesRépartis (TP)Bases dedonnéesréparties (TP)Olfa DALLELGhassenHAMDII12 I13-x-Intelligence ArtificielleWalid CHAINBIB01IA-3.1.1 IA-3.1.2ArchitectureOrientée Services(TP)Test, vérification etqualité logiciel(TP)Walid CHAINBI Marwa GhroudaI12 I13Frameworks de ProgrammationTaha BEN SALAHB01
+- **10:15-11:45** : Logique Floue et Réseaux deNeuronesMehrez ABDELLAOUIR02IA-3.1.1 IA-3.1.2SystèmesRépartis (TP)Bases dedonnéesréparties (TP)Olfa DALLELGhassenHAMDII12 I13-x-IA-3.1.1 IA-3.1.2Anglais V Anglais VJihene HOUASS Salma BANNOURR02 B01IA-3.1.1 IA-3.1.2ArchitectureOrientée Services(TP)Test, vérification etqualité logiciel(TP)Walid CHAINBI Marwa GhroudaI12 I13Systèmes RépartisAnis BEN ARBIAB22
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x--x--x--x-IA-3.1.1 IA-3.1.2Systèmes Répartis(1/15)Frameworks deProgrammation(1/15)Anis BEN ARBIA Taha BEN SALAHB11 R02
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )IA-3.1, IA-3.2, GTE-3.1Droit de l’environnement et RSESoumaya MOURALIAmphiIA-3.1.1 IA-3.1.2IntelligenceArtificielle(1/15)Test,vérification etqualité logiciel(1/15)Walid CHAINBIAgnesGHORBELB11 R02-xx-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Bases de données répartiesManel FOURATIB04Test, vérification et qualitélogicielAgnes GHORBELB02-x-Architecture Orientée ServicesWalid CHAINBIR02Techniques de pointe IIAdem SOENMEZR01-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 24
+
+- **08:30-10:00** : IA-3.2.1 IA-3.2.2Visionindustrielle (TP)SystèmesAvancés enautomatisationIndustrielle (TP)Ranim CHEBIL Wissem FARHATI02 (LaboAutomatisme)Techniques de pointe IIAli DOUIKA03-x-IA-3.2.1 IA-3.2.2RobottiqueIndustrielle (TP)Commande Floueet Neuronale (TP)BadreddineBOUZOUITAMarwa GhroudaHM(Robotique) I12IA-3.2.1 IA-3.2.2Vision industrielle(1/15)Systèmes Avancésen automatisationIndustrielle (1/15)MehrezABDELLAOUIBadreddineBOUZOUITAB02 R12Developpement cloudHouda Ouanis ElZouariR12
+- **10:15-11:45** : IA-3.2.1 IA-3.2.2Visionindustrielle (TP)SystèmesAvancés enautomatisationIndustrielle (TP)Ranim CHEBIL Wissem FARHATI02 (LaboAutomatisme)IA-3.2.2Commande Floue et Neuronale(1/15)Ali DOUIKR12-x-IA-3.2.1 IA-3.2.2RobottiqueIndustrielle (TP)Commande Floueet Neuronale (TP)BadreddineBOUZOUITAMarwa GhroudaHM(Robotique) I12Vision industrielleMehrez ABDELLAOUIB21DataminingTarek AROUIB11
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x--x--x--x-Machine LearningTarek AROUIA22
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )IA-3.1, IA-3.2, GTE-3.1Droit de l’environnement et RSESoumaya MOURALIAmphiCommande Floue et NeuronaleAli DOUIKB02-x-Systèmes Avancés en automatisationIndustrielleBadreddine BOUZOUITAB03Cyber sécuritéSouheil BEN AYEDR02-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Internet des ObjetsIhsen SAADB02IA-3.2.1 IA-3.2.2Anglais V Anglais VJihene HOUASSSalmaBANNOURR21 A21-x-Robottique IndustrielleBadreddine BOUZOUITAB02IA-3.2.2Robottique Industrielle (1/15)Badreddine BOUZOUITAB04-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 25
+
+- **08:30-10:00** : MEC-1.1.1 MEC-1.1.2Matériaux I (TP)Technologiemécanique I (TP)Abir ABDESSALEM AMAL KRAIEMM01 M27MEC-1.1.1 MEC-1.1.2Mécanique desmilieux continus(1/15)Electronique (1/15)Zoubeir TOURKIHajer KOUKI, IhsenBEN HENIAA21 R02Mathématiques de l'ingénieurMaher RADDAOUIB04Systèmes d'exploitationHouda Ouanis El ZouariB11-x-
+- **10:15-11:45** : MEC-1.1.1 MEC-1.1.2Matériaux I (TP)Technologiemécanique I (TP)Abir ABDESSALEM AMAL KRAIEMM01 M27Mécanique analytiqueAbdelfattah MLIKAR13Technologie mécanique IFatma MAKNIB03Mécanique des milieux continus Zoubeir TOURKIR12Automatisme IndustrielBadreddine BOUZOUITAR03-x-
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-Économie GénéraleKhawla CHOUAIEB AYARAB22-x--x--x-
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )MEC-1.1.1 MEC-1.1.2Asservissement etrégulation (TP)Prototypagenumérique etenvironnementvirtuel (TP)Sana BEMBLI Abir ABDESSALEME13 HM1Algorithmiques et programmationavancéeGhassen HAMDIA03-x-ElectroniqueIhsen BEN HENIA, Hajer KOUKIB11Matériaux IKhaoula ESSASSIR21-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )MEC-1.1.1 MEC-1.1.2Asservissement etrégulation (TP)Prototypagenumérique etenvironnementvirtuel (TP)Sana BEMBLI Abir ABDESSALEME13 HM1Asservissement et régulationHassen MEKKIB03-x-Anglais IFaiza BEDOUIA02x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 26
+
+- **08:30-10:00** : Mécanique analytiqueAbdelfattah MLIKAB04MEC-1.2.1 MEC-1.2.2Prototypagenumérique etenvironnementvirtuel (TP)Matériaux I (TP)Anis TRIGUI Abir ABDESSALEMHM1 M01Algorithmiques et programmationavancéeGhassen HAMDIR01MEC-1.2.1 MEC-1.2.2Asservissement etrégulation (TP)Technologiemécanique I (TP)Sana BEMBLI AMAL KRAIEME13 M27Anglais IFaiza BEDOUIA02-x-
+- **10:15-11:45** : Économie GénéraleKhawla CHOUAIEB AYARAB02MEC-1.2.1 MEC-1.2.2Prototypagenumérique etenvironnementvirtuel (TP)Matériaux I (TP)Anis TRIGUI Abir ABDESSALEMHM1 M01MEC-1.2.1 MEC-1.2.2Mécanique desmilieux continus(1/15)Electronique (1/15)Zoubeir TOURKIIhsen BEN HENIA,Hajer KOUKIB21 B01MEC-1.2.1 MEC-1.2.2Asservissement etrégulation (TP)Technologiemécanique I (TP)Sana BEMBLI AMAL KRAIEME13 M27x-
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-Automatisme IndustrielBadreddine BOUZOUITAB03-x--x--x-
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Asservissement et régulationHassen MEKKIB01Mécanique des milieux continus Zoubeir TOURKIR13-x-Mathématiques de l'ingénieurMaher RADDAOUIB22Technologie mécanique IManel KHARRATR13-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Matériaux IKhaoula ESSASSIB11x-ElectroniqueHajer KOUKI, Ihsen BEN HENIAA21Systèmes d'exploitationHouda Ouanis El ZouariB21-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 27
+
+- **08:30-10:00** : MEC-2.1.2Eléments mécatroniques (TP)Chaima LAHDHIRIM13MEC-2.1.1 MEC-2.1.2Dynamique etvibrations dessystèmesmécaniques(1/15)Eléments dessystèmesmécaniques(1/15)Moncef GHISSMohamedAmine BENHASSENAR12 B02Analyse NumériqueKamel BERRIRIB02MEC-2.1.1 MEC-2.1.2Dynamique etvibrations dessystèmesmécaniques(TP)Electronique depuissance (TP)AbirABDESSALEMZaineb TOUATIM12 E12MEC-2.1.1 MEC-2.1.2Anglais III Anglais III Asma BAGGARaouiaMABROUKB12 (LaboAnglais)B13 (LaboAnglais)Machines électriquesSalma JNAYAHR02
+- **10:15-11:45** : MEC-2.1.2Eléments mécatroniques (TP)Chaima LAHDHIRIM13Français des affairesLatifa CHEHIDIA04 (Labo Français)Eléments mécatroniquesRadhoine SGHAIERR01MEC-2.1.1 MEC-2.1.2Dynamique etvibrations dessystèmesmécaniques(TP)Electronique depuissance (TP)AbirABDESSALEMZaineb TOUATIM12 E12Eléments des systèmesmécaniquesMohamed Amine BEN HASSENAR21Projet Managementd'équipeSouad AGREBIA03
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-Electronique de puissanceZaineb TOUATIB01-x--x-TOEIC IMohamed CHOUCHENEB21
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )MEC-2.1.1 MEC-2.1.2Machinesélectriques(TP)Eléments dessystèmesmécaniques(TP)Salma JNAYAH AMAL KRAIEME01 M11 BisCommande et régulationnumérique des systèmesmécatroniquesHassen MEKKIB03-x-Mécanique des fluidesZoubeir TOURKIR03MEC-2.1.1Commande et régulationnumérique des systèmesmécatroniques (TP)Sana BEMBLII01 (Labo Télécom)-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )MEC-2.1.1 MEC-2.1.2Machinesélectriques(TP)Eléments dessystèmesmécaniques(TP)Salma JNAYAH AMAL KRAIEME01 M11 BisDynamique et vibrations dessystèmes mécaniquesMoncef GHISSR04-x-Techniques et méthodes deproduction mécaniqueFarhat ZEMZEMIR01MEC-2.1.1Commande et régulationnumérique des systèmesmécatroniques (TP)Sana BEMBLII01 (Labo Télécom)-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 28
+
+- **08:30-10:00** : Commande et régulationnumérique des systèmesmécatroniquesHassen MEKKIB11Eléments mécatroniquesRadhoine SGHAIERB01MEC-2.2.1 MEC-2.2.2Dynamique etvibrations dessystèmesmécaniques(TP)Electroniquede puissance(TP)AbirABDESSALEMZaineb TOUATIM12 E12Mécanique des fluidesZoubeir TOURKIB21Techniques et méthodes deproduction mécaniqueFarhat ZEMZEMIA22Projet Managementd'équipeSouad AGREBIR13
+- **10:15-11:45** : Français des affairesLatifa CHEHIDIA04 (Labo Français)MEC-2.2.1 MEC-2.2.2Dynamique etvibrations dessystèmesmécaniques(1/15)Eléments dessystèmesmécaniques(1/15)RadhoineSGHAIERMohamedAmine BENHASSENAA03 B11MEC-2.2.1 MEC-2.2.2Dynamique etvibrations dessystèmesmécaniques(TP)Electroniquede puissance(TP)AbirABDESSALEMZaineb TOUATIM12 E12Analyse NumériqueKamel BERRIRIR21MEC-2.2.1 MEC-2.2.2Anglais III Anglais III Asma BAGGARaouiaMABROUKB13 (LaboAnglais)B12 (LaboAnglais)Machines électriquesSalma JNAYAHB01
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x-Dynamique et vibrations dessystèmes mécaniquesRadhoine SGHAIERB02-x--x
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )TOEIC IMohamed CHOUCHENEB21MEC-2.2.1 MEC-2.2.2Machinesélectriques(TP)Elémentsmécatroniques(TP)Salma JNAYAHChaimaLAHDHIRIE01 M13-x-MEC-2.2.1 MEC-2.2.2Eléments dessystèmesmécaniques(TP)Commande etrégulationnumérique dessystèmesmécatroniques(TP)AMAL KRAIEM Sana BEMBLIM11 Bis I13Electronique de puissanceZaineb TOUATIB22-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )MEC-2.2.1 MEC-2.2.2Machinesélectriques(TP)Elémentsmécatroniques(TP)Salma JNAYAHChaimaLAHDHIRIE01 M13-x-MEC-2.2.1 MEC-2.2.2Eléments dessystèmesmécaniques(TP)Commande etrégulationnumérique dessystèmesmécatroniques(TP)AMAL KRAIEM Sana BEMBLIM11 Bis I13Eléments des systèmesmécaniquesMohamed Amine BEN HASSENAB03-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 30
+
+- **08:30-10:00** : Traitements et revêtementsdes surfacesRaouf FATHALLAHR01MEC-3.1.1 MEC-3.1.2Méthodes deséléments finis(1/15)Robotique(1/15)Tarek HASSINEAbdelfattahMLIKAB11 A02-x-MEC-3.1.1Prototypage numérique etenvironnement virtuel (TP)Anis TRIGUIHM1Commande des machines électriques Khaled BEN SMIDAB01MEC-3.1.1 MEC-3.1.2Méthodes deséléments finis (TP)Robotique (TP)Narjes CHTIOUIVacataire_RobotiqueM27 HM(Robotique)
+- **10:15-11:45** : RobotiqueAbdelfattah MLIKAA22Méthodes des éléments finis Tarek HASSINER03-x-MEC-3.1.1Prototypage numérique etenvironnement virtuel (TP)Anis TRIGUIHM1MEC-3.1, MEC-3.2, GMP-3.1Droit de l’environnement et RSESoumaya MOURALIAmphiMEC-3.1.1 MEC-3.1.2Méthodes deséléments finis (TP)Robotique (TP)Narjes CHTIOUIVacataire_RobotiqueM27 HM(Robotique)
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x--x--x--x-Recherche opérationnelle et gestion deproductionAbderrahmen AISSAA03
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )Techniques avancées poursystèmes intelligents Hanen AKKARIB14Programmation orientée objetTakoua ABDELLATIFR21-x-Polymères et compositesAbir ABDESSALEMR12MEC-3.1.1 MEC-3.1.2Anglais V Anglais VJihene HOUASS Salma BANNOURB11 B03-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Systèmes mécatroniquespour l'ingénierie de lamaintenanceMaroua HADDARA03Dynamique des machines et desstructuresRadhoine SGHAIERB22-x-Fiabilité et sûreté des systèmesmécatroniquesChokri BOURAOUIA22Matériaux IIKhaoula ESSASSIR02-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40
+
+## Page 31
+
+- **08:30-10:00** : Matériaux IIKhaoula ESSASSIR13Commande des machinesélectriques Khaled BEN SMIDAB21-x-MEC-3.2.1 MEC-3.2.2Anglais V Anglais VJihene HOUASS Salma BANNOURA22 B14RobotiqueHoussein LAMINEB14Recherche opérationnelle et gestionde productionAbderrahmen AISSAB21
+- **10:15-11:45** : Techniques avancées poursystèmes intelligents Hanen AKKARIR01Programmation orientéeobjetTakoua ABDELLATIFR01-x-Traitements et revêtements des surfacesRaouf FATHALLAHB03MEC-3.1, MEC-3.2, GMP-3.1Droit de l’environnement et RSESoumaya MOURALIAmphiMEC-3.2.1Prototypage numérique etenvironnement virtuel (TP)Kais ALILAHM1
+- **12:00-13:00** : (M/S:
+- **12:00-13:30** : )-x--x--x--x--x-MEC-3.2.1Prototypage numérique etenvironnement virtuel (TP)Kais ALILAHM1
+- **13:00-14:30** : (V:
+- **14:00-15:30** : )MEC-3.2.1 MEC-3.2.2Méthodes deséléments finis(1/15)Robotique(1/15)Tarek HASSINEHousseinLAMINEB02 B11Dynamique des machines etdes structuresRadhoine SGHAIERR04-x-Fiabilité et sûreté des systèmesmécatroniquesChokri BOURAOUIR21MEC-3.2.1 MEC-3.2.2Méthodes deséléments finis (TP)Robotique (TP)Narjes CHTIOUI Houssein LAMINEM27 HM(Robotique)-x-
+- **14:45-16:15** : (V:
+- **15:45-17:15** : )Méthodes des éléments finis Tarek HASSINER02Systèmes mécatroniquespour l'ingénierie de lamaintenanceMaroua HADDARR03-x-Polymères et compositesAbir ABDESSALEMR21MEC-3.2.1 MEC-3.2.2Méthodes deséléments finis (TP)Robotique (TP)Narjes CHTIOUI Houssein LAMINEM27 HM(Robotique)-x-
+- **16:30-18:00** : (Rat.)-x--x--x--x--x--x-Planning généré avec FET 6.7.1 le 21/09/2025 19:40

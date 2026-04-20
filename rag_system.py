@@ -9,39 +9,61 @@ from langchain_text_splitters import (
     RecursiveCharacterTextSplitter,
     MarkdownHeaderTextSplitter,
 )
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_groq import ChatGroq
+from langchain_ollama import ChatOllama
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_chroma import Chroma
 from langchain_core.prompts import ChatPromptTemplate
 
 
 # ---------------------------------------------------------------------------
-# Model Configuration (OpenAI-Centric)
+# Model Configuration (Groq for LLM + Ollama for Unlimited Embeddings)
 # ---------------------------------------------------------------------------
 class ModelConfig:
-    """Swappable model backend — now powered by OpenAI Cloud APIs."""
+    """Swappable model backend — Hybrid Cloud/Local setup."""
 
     PRESETS = {
-        "gpt-4o": {"model": "gpt-4o", "embedding_model": "text-embedding-3-small"},
-        "gpt-4o-mini": {"model": "gpt-4o-mini", "embedding_model": "text-embedding-3-small"},
-        "gpt-3.5-turbo": {"model": "gpt-3.5-turbo", "embedding_model": "text-embedding-3-small"},
+        "ollama-qwen2.5-3b": {
+            "provider": "ollama",
+            "model": "qwen2.5:3b",
+            "embedding_model": "paraphrase-multilingual-MiniLM-L12-v2",
+        },
+        "groq-llama-3.3-70b": {
+            "provider": "groq",
+            "model": "llama-3.3-70b-versatile",
+            "embedding_model": "paraphrase-multilingual-MiniLM-L12-v2",
+        },
+        "groq-llama-3.1-8b": {
+            "provider": "groq",
+            "model": "llama-3.1-8b-instant",
+            "embedding_model": "paraphrase-multilingual-MiniLM-L12-v2",
+        },
     }
 
-    def __init__(self, preset: str = "gpt-4o"):
+    def __init__(self, preset: str = "ollama-qwen2.5-3b"):
         if preset not in self.PRESETS:
             raise ValueError(f"Unknown preset '{preset}'. Choose from: {list(self.PRESETS.keys())}")
         cfg = self.PRESETS[preset]
+        self.provider = cfg["provider"]
         self.model_name = cfg["model"]
         self.embedding_model = cfg["embedding_model"]
 
     def get_llm(self):
-        return ChatOpenAI(
+        if self.provider == "ollama":
+            return ChatOllama(
+                model=self.model_name,
+                temperature=0.2,
+            )
+
+        return ChatGroq(
             model=self.model_name,
             temperature=0.3,
             streaming=True,
         )
 
     def get_embeddings(self):
-        return OpenAIEmbeddings(model=self.embedding_model)
+        # 100% Free, Unlimited Local Embeddings (No external app needed)
+        return HuggingFaceEmbeddings(model_name=self.embedding_model)
 
 
 # ---------------------------------------------------------------------------
@@ -53,15 +75,15 @@ GOLD_STANDARD_DIR = os.path.join(BASE_DIR, "gold_standard")
 ENISO_RAW_DATA_DIR = os.path.join(
     BASE_DIR, "EnisoData1-20260418T142956Z-3-001", "EnisoData1"
 )
-CHROMA_DIR = os.path.join(BASE_DIR, "chroma")
-GOLD_CHROMA_DIR = os.path.join(BASE_DIR, "chroma_gold")
+CHROMA_DIR = os.path.join(BASE_DIR, "chroma_multi")
+GOLD_CHROMA_DIR = os.path.join(BASE_DIR, "chroma_gold_multi")
 
 
 # ---------------------------------------------------------------------------
 # RAG System
 # ---------------------------------------------------------------------------
 class RAGSystem:
-    """Enhanced RAG system with OpenAI APIs, lazy DB loading,
+    """Enhanced RAG system with Groq APIs, lazy DB loading,
     gold_standard priority retrieval, and category-specific search."""
 
     # Category keywords for auto-routing queries
@@ -93,10 +115,10 @@ class RAGSystem:
         data_dir_path: str | None = None,
         db_path: str | None = None,
         gold_db_path: str | None = None,
-        model_preset: str = "gpt-4o",
+        model_preset: str = "ollama-qwen2.5-3b",
         force_reindex: bool = False,
     ) -> None:
-        print("🚀 Initialisation du système RAG ENISO (OpenAI)...")
+        print("🚀 Initialisation du système RAG ENISO (Groq + HuggingFace)...")
 
         self.data_directory = data_dir_path or PROCESSED_DATA_DIR
         self.db_path = db_path or CHROMA_DIR
@@ -305,13 +327,27 @@ Réponse :
         new_chunks = [c for c in chunks if c.metadata["chunk_id"] not in existing_ids]
 
         if new_chunks:
-            # Batch embedding to avoid timeouts — process in groups of 50
-            batch_size = 50
+            # Batch embedding to avoid timeouts — process in groups
+            batch_size = 20  # Smaller batches for free-tier Gemini limits
             total = len(new_chunks)
+            import time
             for i in range(0, total, batch_size):
                 batch = new_chunks[i : i + batch_size]
                 batch_ids = [c.metadata["chunk_id"] for c in batch]
-                vectordb.add_documents(batch, ids=batch_ids)
+                
+                try:
+                    vectordb.add_documents(batch, ids=batch_ids)
+                except Exception as e:
+                    error_msg = str(e)
+                    if "429" in error_msg or "RESOURCE_EXHAUSTED" in error_msg or "quota" in error_msg.lower():
+                        print(f"⏳ API Rate limit hit at chunk {i}. Sleeping for 20 seconds...")
+                        time.sleep(20)
+                        print("▶️ Resuming...")
+                        # Try again after sleeping
+                        vectordb.add_documents(batch, ids=batch_ids)
+                    else:
+                        raise e
+                        
                 done = min(i + batch_size, total)
                 print(f"  📥 Embedded {done}/{total} chunks...")
             print(f"✅ Added {total} new chunks to the database")
@@ -579,16 +615,10 @@ type: gold_standard
         return sources
 
     # ------------------------------------------------------------------
-    # Force re-index (triggered from UI "Update" button)
+    # Sync index (added to gracefully handle rate limit resumes)
     # ------------------------------------------------------------------
-    def force_reindex(self):
-        """Delete the existing ChromaDB and rebuild from scratch."""
-        import shutil
-
-        if os.path.exists(self.db_path):
-            shutil.rmtree(self.db_path)
-            print("🗑️ Old ChromaDB deleted.")
-
+    def sync_index(self):
+        """Resume syncing without deleting the existing ChromaDB. It will only add missing chunks."""
         self._vectordb = None
         if not os.path.exists(self.data_directory):
             self.data_directory = ENISO_RAW_DATA_DIR
@@ -596,4 +626,6 @@ type: gold_standard
         else:
             self._setup_collection()
 
-        print("✅ Re-indexing complete.")
+        print("✅ Sync complete.")
+
+    # ------------------------------------------------------------------

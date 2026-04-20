@@ -16,6 +16,7 @@ Usage:
 import os
 import re
 import glob
+import argparse
 import yaml
 from pathlib import Path
 
@@ -471,20 +472,50 @@ def safe_filename(name: str) -> str:
 
 
 def main():
+    parser = argparse.ArgumentParser(
+        description="Convert raw ENISO files to LLM-friendly markdown."
+    )
+    parser.add_argument(
+        "--input-dir",
+        default=ENISO_DATA_DIR,
+        help="Raw source directory containing PDFs/DOCs/images.",
+    )
+    parser.add_argument(
+        "--output-dir",
+        default=OUTPUT_DIR,
+        help="Destination directory for processed markdown files.",
+    )
+    parser.add_argument(
+        "--clean-output",
+        action="store_true",
+        help="Delete existing markdown files in output before processing.",
+    )
+    args = parser.parse_args()
+
+    input_dir = args.input_dir
+    output_dir = args.output_dir
+
     print("=" * 60)
     print("  EnisoData1 Preprocessor (Enhanced)")
     print("=" * 60)
 
-    if not os.path.exists(ENISO_DATA_DIR):
-        print(f"\n❌ EnisoData1 directory not found: {ENISO_DATA_DIR}")
+    if not os.path.exists(input_dir):
+        print(f"\n❌ EnisoData1 directory not found: {input_dir}")
         print("   Please make sure EnisoData1 is in the expected location.")
         return
 
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    os.makedirs(output_dir, exist_ok=True)
+
+    if args.clean_output:
+        deleted = 0
+        for md in Path(output_dir).glob("*.md"):
+            md.unlink()
+            deleted += 1
+        print(f"\n🧹 Cleaned output directory: removed {deleted} markdown files")
 
     # Collect all files recursively
     all_files = []
-    for root, dirs, files in os.walk(ENISO_DATA_DIR):
+    for root, dirs, files in os.walk(input_dir):
         for f in files:
             all_files.append(os.path.join(root, f))
 
@@ -495,7 +526,7 @@ def main():
     errors = 0
 
     for filepath in sorted(all_files):
-        rel = os.path.relpath(filepath, ENISO_DATA_DIR)
+        rel = os.path.relpath(filepath, input_dir)
         print(f"Processing: {rel}")
 
         try:
@@ -505,15 +536,11 @@ def main():
                 continue
 
             content, meta = result
-            out_name = safe_filename(os.path.basename(filepath)) + ".md"
-            out_path = os.path.join(OUTPUT_DIR, out_name)
-
-            # Handle duplicates
-            counter = 1
-            while os.path.exists(out_path):
-                out_name = safe_filename(os.path.basename(filepath)) + f"_{counter}.md"
-                out_path = os.path.join(OUTPUT_DIR, out_name)
-                counter += 1
+            # Use relative path in output filename for deterministic overwrite behavior.
+            # This avoids endless *_1, *_2 duplicates across reruns.
+            rel_safe = safe_filename(rel.replace("\\", "_").replace("/", "_"))
+            out_name = rel_safe + ".md"
+            out_path = os.path.join(output_dir, out_name)
 
             with open(out_path, "w", encoding="utf-8") as f:
                 f.write(make_frontmatter(meta))
@@ -528,7 +555,7 @@ def main():
 
     print(f"\n{'=' * 60}")
     print(f"  Done! Processed: {processed} | Skipped: {skipped} | Errors: {errors}")
-    print(f"  Output directory: {OUTPUT_DIR}")
+    print(f"  Output directory: {output_dir}")
     print(f"{'=' * 60}")
 
 

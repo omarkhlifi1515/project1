@@ -1,4 +1,7 @@
 import streamlit as st
+from dotenv import load_dotenv
+load_dotenv()
+from pathlib import Path
 from rag_system import RAGSystem, ModelConfig
 
 # ---------------------------------------------------------------------------
@@ -97,7 +100,7 @@ with st.sidebar:
         "Modèle LLM",
         available_models,
         index=0,
-        help="Choisir le modèle OpenAI à utiliser",
+        help="Choisir le modèle Groq à utiliser",
     )
 
     st.markdown("---")
@@ -118,11 +121,11 @@ with st.sidebar:
 
     st.markdown("---")
 
-    # Update / Re-index button
-    if st.button("🔄 Mettre à jour l'index", use_container_width=True):
-        with st.spinner("♻️ Re-indexing documents..."):
+    # Update / Sync button
+    if st.button("🔄 Mettre à jour / Reprendre l'index", use_container_width=True):
+        with st.spinner("♻️ Synchronisation des documents (peut prendre 1 min si limite de quota atteinte)..."):
             rag = init_rag_system(selected_model)
-            rag.force_reindex()
+            rag.sync_index()
             st.success("✅ Index mis à jour !")
 
     if st.button("🗑️ Effacer l'historique", use_container_width=True):
@@ -141,7 +144,7 @@ with st.sidebar:
 
     st.markdown("---")
     st.markdown(
-        "<small style='color: #666'>Powered by OpenAI + LangChain<br>"
+        "<small style='color: #666'>Powered by Groq + HuggingFace + LangChain<br>"
         "Data: ENISO Documents</small>",
         unsafe_allow_html=True,
     )
@@ -156,7 +159,7 @@ st.markdown(
     """
     <h1 style='text-align: center; margin-bottom: 0;'>🎓 ENISO Assistant</h1>
     <p style='text-align: center; color: #888; margin-top: 4px;'>
-        Assistant IA basé sur les documents officiels de l'ENISO — Propulsé par OpenAI
+        Assistant IA basé sur les documents officiels de l'ENISO — Propulsé par Groq & HuggingFace
     </p>
     """,
     unsafe_allow_html=True,

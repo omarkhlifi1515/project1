@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./:/app
+    environment:
+      - SECRET_KEY=change-me
+      - DATABASE_URL=sqlite:///./app.db
+      - DEFAULT_MODEL_PRESET=ollama-qwen2.5-3b
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
+    volumes:
+      - ./frontend:/app

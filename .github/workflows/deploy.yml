@@ -1,0 +1,14 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build API image
+        run: docker build -t eniso-api:latest .
+      - name: Build Frontend image
+        run: docker build -t eniso-frontend:latest ./frontend
