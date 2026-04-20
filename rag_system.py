@@ -2,44 +2,46 @@ import os
 import re
 import yaml
 from pathlib import Path
+from datetime import datetime
 
 from langchain_core.documents import Document
 from langchain_text_splitters import (
     RecursiveCharacterTextSplitter,
     MarkdownHeaderTextSplitter,
 )
-from langchain_ollama import OllamaEmbeddings, OllamaLLM
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_chroma import Chroma
 from langchain_core.prompts import ChatPromptTemplate
 
 
 # ---------------------------------------------------------------------------
-# LiteLLM-style Model Configuration
+# Model Configuration (OpenAI-Centric)
 # ---------------------------------------------------------------------------
 class ModelConfig:
-    """Swappable model backend — change model without touching RAG logic."""
+    """Swappable model backend — now powered by OpenAI Cloud APIs."""
 
     PRESETS = {
-        "llama3": {"model": "llama3", "embedding_model": "nomic-embed-text"},
-        "mistral": {"model": "mistral", "embedding_model": "nomic-embed-text"},
-        "phi3": {"model": "phi3", "embedding_model": "nomic-embed-text"},
-        "llama3.1": {"model": "llama3.1", "embedding_model": "nomic-embed-text"},
-        "gemma2": {"model": "gemma2", "embedding_model": "nomic-embed-text"},
+        "gpt-4o": {"model": "gpt-4o", "embedding_model": "text-embedding-3-small"},
+        "gpt-4o-mini": {"model": "gpt-4o-mini", "embedding_model": "text-embedding-3-small"},
+        "gpt-3.5-turbo": {"model": "gpt-3.5-turbo", "embedding_model": "text-embedding-3-small"},
     }
 
-    def __init__(self, preset: str = "llama3", base_url: str = "http://localhost:11434"):
+    def __init__(self, preset: str = "gpt-4o"):
         if preset not in self.PRESETS:
             raise ValueError(f"Unknown preset '{preset}'. Choose from: {list(self.PRESETS.keys())}")
         cfg = self.PRESETS[preset]
         self.model_name = cfg["model"]
         self.embedding_model = cfg["embedding_model"]
-        self.base_url = base_url
 
     def get_llm(self):
-        return OllamaLLM(model=self.model_name, base_url=self.base_url)
+        return ChatOpenAI(
+            model=self.model_name,
+            temperature=0.3,
+            streaming=True,
+        )
 
     def get_embeddings(self):
-        return OllamaEmbeddings(model=self.embedding_model, base_url=self.base_url)
+        return OpenAIEmbeddings(model=self.embedding_model)
 
 
 # ---------------------------------------------------------------------------
@@ -47,16 +49,20 @@ class ModelConfig:
 # ---------------------------------------------------------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROCESSED_DATA_DIR = os.path.join(BASE_DIR, "processed_data")
+GOLD_STANDARD_DIR = os.path.join(BASE_DIR, "gold_standard")
 ENISO_RAW_DATA_DIR = os.path.join(
     BASE_DIR, "EnisoData1-20260418T142956Z-3-001", "EnisoData1"
 )
+CHROMA_DIR = os.path.join(BASE_DIR, "chroma")
+GOLD_CHROMA_DIR = os.path.join(BASE_DIR, "chroma_gold")
 
 
 # ---------------------------------------------------------------------------
 # RAG System
 # ---------------------------------------------------------------------------
 class RAGSystem:
-    """Enhanced RAG system with metadata filtering, smart chunking, and chat memory."""
+    """Enhanced RAG system with OpenAI APIs, lazy DB loading,
+    gold_standard priority retrieval, and category-specific search."""
 
     # Category keywords for auto-routing queries
     CATEGORY_KEYWORDS = {
@@ -85,15 +91,22 @@ class RAGSystem:
     def __init__(
         self,
         data_dir_path: str | None = None,
-        db_path: str = "chroma",
-        model_preset: str = "llama3",
+        db_path: str | None = None,
+        gold_db_path: str | None = None,
+        model_preset: str = "gpt-4o",
+        force_reindex: bool = False,
     ) -> None:
-        print("🚀 Initialisation du système RAG ENISO (Enhanced)...")
+        print("🚀 Initialisation du système RAG ENISO (OpenAI)...")
 
         self.data_directory = data_dir_path or PROCESSED_DATA_DIR
-        self.db_path = db_path
+        self.db_path = db_path or CHROMA_DIR
+        self.gold_db_path = gold_db_path or GOLD_CHROMA_DIR
+
+        # --- Step 1: Initialize the LLM (fast, no heavy I/O) ---
         self.model_config = ModelConfig(preset=model_preset)
         self.model = self.model_config.get_llm()
+        self._embeddings = self.model_config.get_embeddings()
+        print(f"✅ LLM ready: {model_preset}")
 
         # Chat memory: list of (role, message) tuples
         self.chat_history: list[tuple[str, str]] = []
@@ -125,15 +138,59 @@ Question : {question}
 Réponse :
 """
 
-        # Build the vector store
-        if not os.path.exists(self.data_directory):
-            print(f"⚠ Data directory not found: {self.data_directory}")
-            print("  Run `python preprocess_data.py` first to generate processed data.")
-            print("  Falling back to raw PDF data...")
-            self.data_directory = ENISO_RAW_DATA_DIR
-            self._setup_collection_pdf()
+        # --- Step 2: Lazy vector store initialization ---
+        self._vectordb = None
+        self._gold_vectordb = None
+        self._lazy_init(force_reindex)
+
+    # ------------------------------------------------------------------
+    # Lazy initialization — only index when needed
+    # ------------------------------------------------------------------
+    def _lazy_init(self, force_reindex: bool = False):
+        """Connect to ChromaDB. Only re-scan / re-chunk files if
+        the chroma folder is missing or force_reindex is True."""
+
+        chroma_exists = os.path.exists(self.db_path) and os.path.isdir(self.db_path)
+
+        if not chroma_exists or force_reindex:
+            print("📦 Building vector index from scratch...")
+            if not os.path.exists(self.data_directory):
+                print(f"⚠ Data directory not found: {self.data_directory}")
+                print("  Run `python preprocess_data.py` first.")
+                print("  Falling back to raw PDF data...")
+                self.data_directory = ENISO_RAW_DATA_DIR
+                self._setup_collection_pdf()
+            else:
+                self._setup_collection()
         else:
-            self._setup_collection()
+            print("✅ ChromaDB found — skipping re-indexing (use force_reindex=True to rebuild).")
+            self._vectordb = self._get_vectordb()
+
+        # Always try to connect the gold_standard DB
+        self._init_gold_standard_db()
+
+    def _get_vectordb(self):
+        """Get or create the main vector store connection."""
+        if self._vectordb is None:
+            self._vectordb = Chroma(
+                persist_directory=self.db_path,
+                embedding_function=self._embeddings,
+            )
+        return self._vectordb
+
+    def _init_gold_standard_db(self):
+        """Initialize the gold_standard vector store if the folder exists."""
+        os.makedirs(GOLD_STANDARD_DIR, exist_ok=True)
+        if os.path.exists(self.gold_db_path) and os.path.isdir(self.gold_db_path):
+            self._gold_vectordb = Chroma(
+                persist_directory=self.gold_db_path,
+                embedding_function=self._embeddings,
+            )
+            count = len(self._gold_vectordb.get()["ids"])
+            print(f"⭐ Gold standard DB connected ({count} items)")
+        else:
+            self._gold_vectordb = None
+            print("⭐ No gold standard data yet.")
 
     # ------------------------------------------------------------------
     # Document loading (processed markdown files)
@@ -240,7 +297,7 @@ Réponse :
         chunks = self._assign_chunk_ids(chunks)
         print(f"🔪 Split into {len(chunks)} chunks")
 
-        vectordb = self._initialize_vectorDB()
+        vectordb = self._get_vectordb()
         existing = vectordb.get()
         existing_ids = set(existing["ids"])
         print(f"📦 Existing chunks in DB: {len(existing_ids)}")
@@ -284,7 +341,7 @@ Réponse :
             c.metadata["chunk_id"] = f"{src}_{page}_{i}"
             c.metadata["category"] = "general"
 
-        vectordb = self._initialize_vectorDB()
+        vectordb = self._get_vectordb()
         existing_ids = set(vectordb.get()["ids"])
         new_chunks = [c for c in chunks if c.metadata["chunk_id"] not in existing_ids]
 
@@ -298,6 +355,59 @@ Réponse :
                 done = min(i + batch_size, total)
                 print(f"  📥 Embedded {done}/{total} chunks...")
             print(f"✅ Added {total} chunks (fallback)")
+
+    # ------------------------------------------------------------------
+    # Gold Standard: save & index upvoted Q&A pairs
+    # ------------------------------------------------------------------
+    def save_gold_standard(self, question: str, answer: str):
+        """Save an upvoted Q&A pair as a high-priority Markdown file
+        and index it into the gold_standard ChromaDB."""
+        os.makedirs(GOLD_STANDARD_DIR, exist_ok=True)
+
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        safe_q = re.sub(r"[^\w\s-]", "", question)[:50].strip().replace(" ", "_")
+        filename = f"gold_{timestamp}_{safe_q}.md"
+        filepath = os.path.join(GOLD_STANDARD_DIR, filename)
+
+        # Detect category for the Q&A
+        category = self._detect_query_category(question) or "general"
+
+        content = f"""---
+category: {category}
+source_file: "{filename}"
+type: gold_standard
+---
+
+# Question Validée
+
+**Question :** {question}
+
+**Réponse Validée :**
+{answer}
+"""
+        with open(filepath, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        # Index into gold ChromaDB
+        doc = Document(
+            page_content=f"Question: {question}\n\nRéponse: {answer}",
+            metadata={
+                "category": category,
+                "source_file": filename,
+                "type": "gold_standard",
+                "chunk_id": f"gold_{timestamp}",
+            },
+        )
+
+        gold_db = Chroma(
+            persist_directory=self.gold_db_path,
+            embedding_function=self._embeddings,
+        )
+        gold_db.add_documents([doc], ids=[doc.metadata["chunk_id"]])
+        self._gold_vectordb = gold_db
+
+        print(f"⭐ Saved gold standard: {filename}")
+        return filename
 
     # ------------------------------------------------------------------
     # Query routing: detect category from question
@@ -316,35 +426,62 @@ Réponse :
         return None
 
     # ------------------------------------------------------------------
-    # Context retrieval with optional category filter
+    # Context retrieval with priority: gold_standard first, then main DB
     # ------------------------------------------------------------------
     def _retrieve_context(self, query: str, k: int = 5, score_threshold: float = 1.5):
-        """Retrieve relevant chunks, optionally filtered by category."""
-        vectordb = self._initialize_vectorDB()
+        """Retrieve relevant chunks. Priority order:
+        1. Gold standard DB (if a close match exists)
+        2. Main DB (filtered by category, then unfiltered fallback)
+        """
+        results = []
+
+        # --- Priority 1: Search gold_standard DB ---
+        if self._gold_vectordb is not None:
+            try:
+                gold_count = len(self._gold_vectordb.get()["ids"])
+                if gold_count > 0:
+                    gold_results = self._gold_vectordb.similarity_search_with_score(
+                        query, k=3
+                    )
+                    # Only use gold results if they're highly relevant (score < 0.8)
+                    for doc, score in gold_results:
+                        if score < 0.8:
+                            doc.metadata["_gold"] = True
+                            results.append((doc, score))
+
+                    if results:
+                        print(f"⭐ Found {len(results)} gold standard match(es)")
+            except Exception as e:
+                print(f"⚠ Gold standard search error: {e}")
+
+        # --- Priority 2: Search main DB with category filter ---
+        vectordb = self._get_vectordb()
         category = self._detect_query_category(query)
+        remaining_k = max(1, k - len(results))
 
         if category:
             print(f"🏷️  Detected category: {category}")
-            # Try filtered search first
             try:
-                results = vectordb.similarity_search_with_score(
+                filtered_results = vectordb.similarity_search_with_score(
                     query,
-                    k=k,
+                    k=remaining_k,
                     filter={"category": category},
                 )
-                if results:
-                    # Also add some unfiltered results for broader context
-                    unfiltered = vectordb.similarity_search_with_score(query, k=2)
-                    seen_ids = {doc.metadata.get("chunk_id") for doc, _ in results}
-                    for doc, score in unfiltered:
-                        if doc.metadata.get("chunk_id") not in seen_ids:
-                            results.append((doc, score))
+                if filtered_results:
+                    results.extend(filtered_results)
                     return results
             except Exception:
                 pass  # Fall through to unfiltered
 
-        # Unfiltered retrieval
-        results = vectordb.similarity_search_with_score(query, k=k)
+        # --- Fallback: Unfiltered retrieval ---
+        unfiltered = vectordb.similarity_search_with_score(query, k=remaining_k)
+
+        if unfiltered:
+            # Deduplicate against gold results
+            seen_ids = {doc.metadata.get("chunk_id") for doc, _ in results}
+            for doc, score in unfiltered:
+                if doc.metadata.get("chunk_id") not in seen_ids:
+                    results.append((doc, score))
 
         # Filter by score threshold (lower is better in Chroma's L2 distance)
         if results:
@@ -379,7 +516,8 @@ Réponse :
     def answer_query(self, query_text: str) -> tuple[str, list[str]]:
         """Generate an answer with context retrieval and chat memory."""
         prompt, context_results = self._build_prompt(query_text)
-        response_text = self.model.invoke(prompt)
+        response = self.model.invoke(prompt)
+        response_text = response.content if hasattr(response, "content") else str(response)
         sources = self._finalize_response(query_text, response_text, context_results)
         return response_text, sources
 
@@ -390,8 +528,9 @@ Réponse :
 
         full_response = []
         for chunk in self.model.stream(prompt):
-            full_response.append(chunk)
-            yield chunk, None
+            token = chunk.content if hasattr(chunk, "content") else str(chunk)
+            full_response.append(token)
+            yield token, None
 
         response_text = "".join(full_response)
         sources = self._finalize_response(query_text, response_text, context_results)
@@ -405,7 +544,8 @@ Réponse :
         for doc, score in context_results:
             src = doc.metadata.get("source_file", doc.metadata.get("source", "?"))
             cat = doc.metadata.get("category", "?")
-            print(f"  [score={score:.3f}] [{cat}] {src}")
+            gold = " ⭐" if doc.metadata.get("_gold") else ""
+            print(f"  [score={score:.3f}] [{cat}]{gold} {src}")
 
         context_text = "\n\n---\n\n".join(
             [doc.page_content for doc, _ in context_results]
@@ -433,15 +573,27 @@ Réponse :
         sources = list({
             f"{doc.metadata.get('source_file', os.path.basename(doc.metadata.get('source', 'unknown')))} "
             f"[{doc.metadata.get('category', '?')}]"
+            + (" ⭐" if doc.metadata.get("_gold") else "")
             for doc, _ in context_results
         })
         return sources
 
     # ------------------------------------------------------------------
-    # Vector DB
+    # Force re-index (triggered from UI "Update" button)
     # ------------------------------------------------------------------
-    def _initialize_vectorDB(self):
-        return Chroma(
-            persist_directory=self.db_path,
-            embedding_function=self.model_config.get_embeddings(),
-        )
+    def force_reindex(self):
+        """Delete the existing ChromaDB and rebuild from scratch."""
+        import shutil
+
+        if os.path.exists(self.db_path):
+            shutil.rmtree(self.db_path)
+            print("🗑️ Old ChromaDB deleted.")
+
+        self._vectordb = None
+        if not os.path.exists(self.data_directory):
+            self.data_directory = ENISO_RAW_DATA_DIR
+            self._setup_collection_pdf()
+        else:
+            self._setup_collection()
+
+        print("✅ Re-indexing complete.")

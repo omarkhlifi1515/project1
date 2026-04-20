@@ -57,8 +57,33 @@ st.markdown("""
         border: 1px solid rgba(34, 197, 94, 0.2);
         font-size: 0.78rem;
     }
+
+    /* Gold source pill */
+    .source-pill.gold {
+        background: rgba(234, 179, 8, 0.15);
+        color: #eab308;
+        border: 1px solid rgba(234, 179, 8, 0.3);
+    }
+
+    /* Feedback buttons */
+    .feedback-row {
+        display: flex;
+        gap: 8px;
+        margin-top: 4px;
+    }
 </style>
 """, unsafe_allow_html=True)
+
+
+# ---------------------------------------------------------------------------
+# Cached RAG initialization (persists across reruns & sessions)
+# ---------------------------------------------------------------------------
+@st.cache_resource
+def init_rag_system(model_preset: str) -> RAGSystem:
+    """Initialize the RAG system once and cache it across sessions.
+    The LLM + Vector DB connection is created here.
+    Subsequent calls with the same model_preset return the cached instance."""
+    return RAGSystem(model_preset=model_preset)
 
 
 # ---------------------------------------------------------------------------
@@ -72,7 +97,7 @@ with st.sidebar:
         "Modèle LLM",
         available_models,
         index=0,
-        help="Choisir le modèle Ollama à utiliser",
+        help="Choisir le modèle OpenAI à utiliser",
     )
 
     st.markdown("---")
@@ -92,43 +117,46 @@ with st.sidebar:
             st.session_state["prefill_question"] = question
 
     st.markdown("---")
+
+    # Update / Re-index button
+    if st.button("🔄 Mettre à jour l'index", use_container_width=True):
+        with st.spinner("♻️ Re-indexing documents..."):
+            rag = init_rag_system(selected_model)
+            rag.force_reindex()
+            st.success("✅ Index mis à jour !")
+
     if st.button("🗑️ Effacer l'historique", use_container_width=True):
         st.session_state["messages"] = []
-        if "rag_system" in st.session_state:
-            st.session_state["rag_system"].clear_history()
+        rag = init_rag_system(selected_model)
+        rag.clear_history()
         st.rerun()
 
     st.markdown("---")
+
+    # Gold standard stats
+    import os
+    gold_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "gold_standard")
+    gold_count = len(list(Path(gold_dir).glob("*.md"))) if os.path.exists(gold_dir) else 0
+    st.markdown(f"⭐ **Réponses validées:** {gold_count}")
+
+    st.markdown("---")
     st.markdown(
-        "<small style='color: #666'>Powered by Ollama + LangChain<br>"
+        "<small style='color: #666'>Powered by OpenAI + LangChain<br>"
         "Data: ENISO Documents</small>",
         unsafe_allow_html=True,
     )
 
 
 # ---------------------------------------------------------------------------
-# Load or reload RAG system
-# ---------------------------------------------------------------------------
-def get_rag_system(model_preset: str) -> RAGSystem:
-    """Get or create RAG system, respecting model changes."""
-    if (
-        "rag_system" not in st.session_state
-        or st.session_state.get("current_model") != model_preset
-    ):
-        with st.spinner(f"🔄 Chargement du système RAG (modèle: {model_preset})..."):
-            st.session_state["rag_system"] = RAGSystem(model_preset=model_preset)
-            st.session_state["current_model"] = model_preset
-    return st.session_state["rag_system"]
-
-
-# ---------------------------------------------------------------------------
 # Main chat interface
 # ---------------------------------------------------------------------------
+from pathlib import Path
+
 st.markdown(
     """
     <h1 style='text-align: center; margin-bottom: 0;'>🎓 ENISO Assistant</h1>
     <p style='text-align: center; color: #888; margin-top: 4px;'>
-        Assistant IA basé sur les documents officiels de l'ENISO
+        Assistant IA basé sur les documents officiels de l'ENISO — Propulsé par OpenAI
     </p>
     """,
     unsafe_allow_html=True,
@@ -138,14 +166,45 @@ st.markdown(
 if "messages" not in st.session_state:
     st.session_state["messages"] = []
 
-# Display existing messages
-for msg in st.session_state["messages"]:
+# Display existing messages with feedback buttons
+for idx, msg in enumerate(st.session_state["messages"]):
     with st.chat_message(msg["role"], avatar="🎓" if msg["role"] == "assistant" else "👤"):
         st.markdown(msg["content"])
         if msg.get("sources"):
             with st.expander("📄 Sources", expanded=False):
                 for src in msg["sources"]:
-                    st.markdown(f'<span class="source-pill">{src}</span>', unsafe_allow_html=True)
+                    pill_class = "source-pill gold" if "⭐" in src else "source-pill"
+                    st.markdown(f'<span class="{pill_class}">{src}</span>', unsafe_allow_html=True)
+
+        # Feedback buttons for assistant messages
+        if msg["role"] == "assistant" and not msg.get("feedback"):
+            col1, col2, col3 = st.columns([1, 1, 10])
+            with col1:
+                if st.button("👍", key=f"up_{idx}", help="Cette réponse est bonne"):
+                    # Find the user question that preceded this answer
+                    user_question = ""
+                    for j in range(idx - 1, -1, -1):
+                        if st.session_state["messages"][j]["role"] == "user":
+                            user_question = st.session_state["messages"][j]["content"]
+                            break
+
+                    if user_question:
+                        rag = init_rag_system(selected_model)
+                        rag.save_gold_standard(user_question, msg["content"])
+                        st.session_state["messages"][idx]["feedback"] = "up"
+                        st.toast("⭐ Réponse sauvegardée comme référence !", icon="✅")
+                        st.rerun()
+            with col2:
+                if st.button("👎", key=f"down_{idx}", help="Cette réponse est mauvaise"):
+                    st.session_state["messages"][idx]["feedback"] = "down"
+                    st.toast("📝 Merci pour votre retour !", icon="🔄")
+                    st.rerun()
+
+        # Show feedback state
+        elif msg["role"] == "assistant" and msg.get("feedback") == "up":
+            st.markdown("✅ *Réponse validée comme référence*")
+        elif msg["role"] == "assistant" and msg.get("feedback") == "down":
+            st.markdown("🔄 *Merci pour votre retour*")
 
 # Handle prefilled question from sidebar
 prefill = st.session_state.pop("prefill_question", None)
@@ -164,7 +223,7 @@ if user_input:
         st.markdown(user_input)
 
     # Generate response with streaming
-    rag = get_rag_system(selected_model)
+    rag = init_rag_system(selected_model)
 
     with st.chat_message("assistant", avatar="🎓"):
         # Step 1: Retrieve context (fast)
@@ -175,8 +234,8 @@ if user_input:
         try:
             def token_generator():
                 for chunk in rag.model.stream(prompt):
-                    # Ensure chunk is a string
-                    text = str(chunk) if not isinstance(chunk, str) else chunk
+                    # ChatOpenAI returns AIMessageChunk objects
+                    text = chunk.content if hasattr(chunk, "content") else str(chunk)
                     if text:
                         yield text
 
@@ -188,8 +247,9 @@ if user_input:
 
         except Exception as e:
             # Fallback: non-streaming mode
-            st.warning(f"Streaming failed, using standard mode...")
-            full_response = rag.model.invoke(prompt)
+            st.warning(f"Streaming failed, using standard mode: {e}")
+            response = rag.model.invoke(prompt)
+            full_response = response.content if hasattr(response, "content") else str(response)
             st.markdown(full_response)
 
         # Finalize (update history, get sources)
@@ -198,7 +258,8 @@ if user_input:
         if sources:
             with st.expander("📄 Sources", expanded=False):
                 for src in sources:
-                    st.markdown(f'<span class="source-pill">{src}</span>', unsafe_allow_html=True)
+                    pill_class = "source-pill gold" if "⭐" in src else "source-pill"
+                    st.markdown(f'<span class="{pill_class}">{src}</span>', unsafe_allow_html=True)
 
     # Save assistant message
     st.session_state["messages"].append({
@@ -206,3 +267,5 @@ if user_input:
         "content": full_response,
         "sources": sources,
     })
+
+    st.rerun()  # Rerun to show feedback buttons on the new message

@@ -2,7 +2,8 @@ pypdf
 langchain
 langchain-community
 langchain-chroma
-langchain-ollama
+langchain-openai
 streamlit
 python-docx
 pyyaml
+openai

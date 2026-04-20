@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """
-EnisoData1 Preprocessor
-=======================
+EnisoData1 Preprocessor (Enhanced)
+===================================
 Converts all files in EnisoData1 (PDFs, DOC/DOCX, images) into structured
 Markdown files with YAML frontmatter, optimised for RAG ingestion.
+
+Enhancements:
+- Smart table-to-Markdown-list conversion for timetable PDFs
+- Cleaner output for LLM consumption
 
 Usage:
     python preprocess_data.py
@@ -247,10 +251,90 @@ def extract_text_from_image(filepath: str) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Smart Table-to-Markdown Converter
+# ---------------------------------------------------------------------------
+def _convert_table_blob_to_markdown_list(raw_text: str) -> str:
+    """Convert raw PDF table dumps (concatenated cells) into
+    LLM-friendly Markdown lists.
+
+    Detects timetable patterns like:
+    - Day + time slot + subject + professor + room
+    - Attempts to split the blob into structured entries
+    """
+    # Pattern: time ranges like 08:30-10:00, 10:15-11:45, etc.
+    time_pattern = re.compile(r"(\d{2}:\d{2})\s*[-–]\s*(\d{2}:\d{2})")
+    # Pattern: days of the week (French)
+    day_pattern = re.compile(
+        r"(Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Dimanche)",
+        re.IGNORECASE,
+    )
+    # Pattern: room codes like A03, B22, E13, R02, M11, etc.
+    room_pattern = re.compile(r"\b([A-Z]\d{2}(?:\s*\([^)]*\))?)\b")
+
+    # If the text doesn't look like a timetable blob, return as-is
+    times = time_pattern.findall(raw_text)
+    days = day_pattern.findall(raw_text)
+
+    if len(times) < 2 or len(days) < 2:
+        return raw_text  # Not a timetable blob
+
+    # Strategy: split by time slots to create structured entries
+    lines = []
+    # Split on time patterns
+    segments = time_pattern.split(raw_text)
+
+    current_time = None
+    for i, seg in enumerate(segments):
+        time_match = time_pattern.match(seg) if len(seg) < 15 else None
+        if i > 0 and i % 3 == 1:
+            # This is the start time
+            start = segments[i] if i < len(segments) else ""
+            end = segments[i + 1] if i + 1 < len(segments) else ""
+            current_time = f"{start}-{end}"
+            continue
+        elif i > 0 and i % 3 == 2:
+            continue  # end time, already captured
+
+        if current_time and seg.strip():
+            # Clean up the content
+            content = seg.strip()
+            # Remove excessive whitespace
+            content = re.sub(r"\s{2,}", " | ", content)
+            content = re.sub(r"---+", "", content)
+            content = content.strip(" |")
+            if content:
+                lines.append(f"- **{current_time}** : {content}")
+
+    if lines:
+        return "\n".join(lines)
+
+    return raw_text
+
+
+def _clean_raw_timetable_text(raw_text: str) -> str:
+    """Post-process raw timetable text to be more LLM-friendly.
+    Converts dense table dumps into structured bullet lists."""
+    # Split by pages
+    page_pattern = re.compile(r"(## Page \d+)")
+    parts = page_pattern.split(raw_text)
+
+    cleaned_parts = []
+    for part in parts:
+        if page_pattern.match(part):
+            cleaned_parts.append(part)
+        else:
+            # Process each page's content
+            converted = _convert_table_blob_to_markdown_list(part)
+            cleaned_parts.append(converted)
+
+    return "\n\n".join(cleaned_parts)
+
+
+# ---------------------------------------------------------------------------
 # Formatting: category-specific post-processing
 # ---------------------------------------------------------------------------
 def format_timetable_content(raw_text: str, meta: dict) -> str:
-    """Add contextual headers for timetable documents."""
+    """Add contextual headers and smart-format timetable documents."""
     title = "# Emploi du Temps"
     if meta.get("semester"):
         title += f" — {meta['semester']}"
@@ -264,7 +348,11 @@ def format_timetable_content(raw_text: str, meta: dict) -> str:
         "de l'ENISO (École Nationale d'Ingénieurs de Sousse).\n"
         "Chaque section correspond à une page du document original."
     )
-    return f"{title}\n\n{description}\n\n{raw_text}"
+
+    # Smart conversion: turn raw table blobs into structured lists
+    formatted_text = _clean_raw_timetable_text(raw_text)
+
+    return f"{title}\n\n{description}\n\n{formatted_text}"
 
 
 def format_calendar_content(raw_text: str, meta: dict) -> str:
@@ -279,7 +367,11 @@ def format_calendar_content(raw_text: str, meta: dict) -> str:
         "Ce document contient le calendrier des devoirs surveillés (DS) "
         "et examens de l'ENISO."
     )
-    return f"{title}\n\n{description}\n\n{raw_text}"
+
+    # Also apply the table-to-list converter for exam calendars
+    formatted_text = _clean_raw_timetable_text(raw_text)
+
+    return f"{title}\n\n{description}\n\n{formatted_text}"
 
 
 def format_stage_content(raw_text: str, meta: dict) -> str:
@@ -380,7 +472,7 @@ def safe_filename(name: str) -> str:
 
 def main():
     print("=" * 60)
-    print("  EnisoData1 Preprocessor")
+    print("  EnisoData1 Preprocessor (Enhanced)")
     print("=" * 60)
 
     if not os.path.exists(ENISO_DATA_DIR):
